@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin&family=Staatliches&display=swap&family=Roboto&display=swap&family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --font-heading: 'Staatliches', cursive;
+  --font-texting: 'Palanquin', sans-serif;
+
+  --color-one: #4a4e69;
+  --color-two: #8e9aaf;
+  --color-three: #cbc0d3;
+  --color-four: #feeafa;
+  --color-five: #eff1ff;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+header {
+  min-width: 38.4rem;
+  margin: 0 auto;
+  background: var(--color-two);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header svg {
+  margin: 3.2rem 0;
+}
+
+header span {
+  width: 100%;
+  text-align: center;
+
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  background: var(--color-three);
+
+  padding: 0.8rem 0;
+  margin-bottom: 2.9rem;
+}
+
+header p {
+  display: none;
+
+  padding: 3.2rem 5.1rem 0;
+
+  font-family: 'Roboto';
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+main {
+  width: 100vw;
+}
+
+main .page {
+  min-width: 38.4rem;
+  min-height: 100vh;
+  padding: 1.4rem 3.2rem 6rem;
+
+  background: var(--color-five);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .page .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+main .page p {
+  min-width: 30.5rem;
+  margin-bottom: 6.3rem;
+
+  text-align: center;
+  font-family: 'Palanquin';
+  font-size: 2rem;
+  line-height: 1.5rem;
+
+  color: #23053a;
+}
+
+main .page .card {
+  position: relative;
+  animation: slideTop 2000ms 300ms backwards;
+}
+
+main .page .card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+  transition: all 100ms;
+}
+
+main .page .card img:hover {
+  transform: scale(1.05);
+  filter: blur(1px);
+}
+
+main .page .card span {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  padding: 0 2.4rem;
+
+  font-family: 'Staatliches';
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: #4a4e69;
+  background: var(--color-four);
+  border-radius: 2rem;
+
+  animation: slideDown 2000ms 300ms backwards;
+}
+
+footer {
+  margin-top: 8%;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+
+  text-align: center;
+
+  color: #4a4e69;
+
+  mix-blend-mode: normal;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 800;
+  color: black;
+}
+
+@keyframes slideTop {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 426px) {
+  .page p {
+    max-width: 51.4rem;
+  }
+}
+
+@media (min-width: 770px) {
+  .one {
+    display: flex;
+  }
+
+  header {
+    position: relative;
+    margin: 0;
+    width: 35rem;
+  }
+
+  header .title {
+    line-height: 5.4rem;
+  }
+
+  header span {
+    margin-bottom: 0;
+  }
+
+  header p {
+    display: block;
+  }
+
+  main .page .cards {
+    max-width: 70%;
+  }
+
+  .page p {
+    display: none;
+  }
+}
+
+@media (min-width: 1100px) {
+  .cards {
+    width: 72.4rem;
+    margin: 12rem auto 0;
+
+    display: grid !important;
+    justify-content: center;
+    grid-template-columns: repeat(3, 15vw);
+    grid-template-rows: repeat(3, 20vh);
+    gap: 5% !important;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+
+  .card1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .card2 {
+    grid-column: 2/3;
+    grid-row: 1/3;
+  }
+
+  .card3 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  .card4 {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .card5 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+
+  .card6 {
+    grid-column: 3/4;
+    grid-row: 2/4;
+  }
+}
